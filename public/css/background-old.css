@@ -1,0 +1,56 @@
+@media only screen and (max-width: 415px) {
+  #fuji {
+    width: 180%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    bottom: 0;
+  }
+  #sakura {
+    width: 90%;
+    position: absolute;
+    transform: translateY(40%);
+    bottom: 0;
+  }
+  #cloud-normal > * {
+    width: 150px;
+  }
+  #index-about .background {
+    overflow: visible;
+  }
+  .anti-overflow {
+    overflow-x: hidden;
+  }
+  #autumn {
+    width: 90%;
+    z-index: 1;
+  }
+  #kyoto {
+    position: absolute;
+    width: 100%;
+    bottom: -50px;
+    left: 0;
+    z-index: 1;
+  }
+  #temple {
+    position: absolute;
+    width: 40%;
+    bottom: -100px;
+    right: 0;
+    z-index: 1;
+  }
+  #bridge {
+    width: 200%;
+    bottom: -50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  #cloud-snow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  #cloud-snow > * {
+    margin: 50px;
+    width: 100px;
+  }
+}

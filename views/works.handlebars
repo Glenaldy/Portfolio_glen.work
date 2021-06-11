@@ -1,0 +1,40 @@
+{{>header}}
+{{>menu-overlay}}
+<main>
+    <div id="works-page">
+        <div class="background">
+            <img src="assets/Background/snow-bridge.svg" alt="Snow Bridge" id="bridge" />
+            <div id="cloud-snow">
+                <img src="assets/Background/Cloud/cloud-snow1.svg" alt="Cloud Snow" id="cloud-snow1" width="250px" />
+                <img src="assets/Background/Cloud/cloud-snow2.svg" alt="Cloud Snow" id="cloud-snow2" width="250px" />
+                <img src="assets/Background/Cloud/cloud-snow3.svg" alt="Cloud Snow" id="cloud-snow3" width="250px" />
+                <img src="assets/Background/Cloud/cloud-snow4.svg" alt="Cloud Snow" id="cloud-snow4" width="250px" />
+            </div>
+        </div>
+        <div class="content">
+            <h1>WORKS</h1>
+            <div id="work-genre" status="closed">
+                <ul>
+                    <li data-genre="all" class="selected">All</li>
+                    <li data-genre="illustrator">Illustrator</li>
+                    <li data-genre="product">Product Design</li>
+                    <li data-genre="website">Website</li>
+                    <li data-genre="video">Video</li>
+                </ul>
+                <div id="dropdown-button">
+                    <div class="arrow-down"></div>
+                </div>
+            </div>
+            <div id="work-list">
+                {{#each work_list}}
+                <a href="/work-details/{{this.folder}}" data-genre="{{this.genre}}" class="work-window genre-selected"
+                    id="{{this.folder}}">
+                    <div class="work-image"><img src="assets/Works/{{this.folder}}/thumbnail.jpg" alt=""></div>
+                    <p class="work-text">{{this.title}}</p>
+                </a>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</main>
+{{>footer}}

@@ -1,0 +1,34 @@
+<div data-genre="illustrator" class="work-window genre-selected">
+    <div class="work-image"><img src="assets/Image/test.jpg" alt=""></div>
+    <p class="work-text">Work #1 Illustrator</p>
+</div>
+
+<div data-genre="product" class="work-window genre-selected">
+    <div class="work-image"><img src="assets/Image/test.jpg" alt=""></div>
+    <p class="work-text">Work #2 Product</p>
+</div>
+<div data-genre="video" class="work-window genre-selected">
+    <div class="work-image"><img src="assets/Image/test.jpg" alt=""></div>
+    <p class="work-text">Work #3 Video</p>
+</div>
+<div data-genre="website" class="work-window genre-selected">
+    <div class="work-image"><img src="assets/Image/test.jpg" alt=""></div>
+    <p class="work-text">Work #4 Website</p>
+</div>
+<div data-genre="product illustrator" class="work-window genre-selected">
+    <div class="work-image"><img src="assets/Image/test.jpg" alt=""></div>
+    <p class="work-text">Work #5 Product Illustrator</p>
+</div>
+<div data-genre="website illustrator" class="work-window genre-selected">
+    <div class="work-image"><img src="assets/Image/test.jpg" alt=""></div>
+    <p class="work-text">Work #6 Website Illustrator</p>
+</div>
+
+{{#each work_list}}
+<a href="/work-details">
+    <div data-genre={{this.genre}} class="work-window genre-selected">
+        <div class="work-image"></div>
+        <p class="work-text">{{this.title}}</p>
+    </div>
+</a>
+{{/each}}

@@ -1,0 +1,70 @@
+{
+  "chicken_brochure": {
+    "genre": "illustrator product",
+    "title": "Berkat Anugerah Brochure",
+    "folder": "chicken_brochure",
+    "description": "Brochure designs for chicken meat supplier in Indonesia",
+    "image1": "Version 1",
+    "image2": "Version 2"
+  },
+  "covid_poster": {
+    "genre": "illustrator",
+    "title": "Covid-19 Poster",
+    "folder": "covid_poster",
+    "description": "Covid-19 poster commisioned to promote better hygiene in an Indonesian university",
+    "image1": "Poster"
+  },
+  "mug_packaging": {
+    "genre": "illustrator product",
+    "title": "TungTau® Product Packaging",
+    "folder": "mug_packaging",
+    "description": "Mug and plate set packaging design prototype for a classic coffee shop in Indonesia",
+    "image1": "Dimension of the cup packaging",
+    "image2": "Dimension of the plate packaging",
+    "image3": "Outer packaging design and side view",
+    "image4": "Prototype of the end product",
+    "image5": "The inside of the product"
+  },
+  "neboke_no_hibi": {
+    "genre": "video",
+    "title": "Neboke no Hibi",
+    "folder": "neboke_no_hibi",
+    "description": "A short stop motion film based on character designed by a classmate at Kyoto Computer Gakuin",
+    "image1": "One of the scene in Neboke no Hibi",
+    "image2": "The scene during climax of the story",
+    "image3": "Character concept drawing by classmate",
+    "image4": "Character concept sheet by classmate",
+    "image5": "Storyboard"
+  },
+  "reddit_fes": {
+    "genre": "illustrator",
+    "title": "Reddit Love Live Community Project",
+    "folder": "reddit_fes",
+    "description": "A big commision project from overseas community to Love Live! Fest™ concert",
+    "image1": "Banner with Chroneco's Art",
+    "image2": "Banner only",
+    "image3": "The end product of the flower stand",
+    "image4": "The end printed product with the community",
+    "image5": "Process of cutting the art board"
+  },
+  "stage_3d": {
+    "genre": "3d",
+    "title": "Niji Live House 3D",
+    "folder": "stage_3d",
+    "description": "A project about imaginary live house that's created in Autodesk Maya",
+    "image1": "The end result of all rendering in poster form",
+    "image2": "Front view",
+    "image3": "Bottom view, emphasizing the god rays from the spotlight",
+    "image4": "Side view",
+    "image5": "Top view"
+  },
+  "whale_tours": {
+    "genre": "illustrator website",
+    "title": "Whale Tours",
+    "folder": "whale_tours",
+    "description": "This project is about imaginary travel company called Whale Tours",
+    "image1": "Landing page",
+    "image2": "Icons",
+    "image3": "Brand Identity"
+  }
+}

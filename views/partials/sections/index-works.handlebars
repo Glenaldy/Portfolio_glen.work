@@ -1,0 +1,28 @@
+<div id="index-works" class="index-section clip-diagonal-top">
+  <div class="background">
+    <img src="assets/Background/snow-bridge.svg" alt="Snow Bridge" id="bridge" />
+    <div id="cloud-snow">
+      <img src="assets/Background/Cloud/cloud-snow1.svg" alt="Cloud Snow" id="cloud-snow1" width="250px" />
+      <img src="assets/Background/Cloud/cloud-snow2.svg" alt="Cloud Snow" id="cloud-snow2" width="250px" />
+      <img src="assets/Background/Cloud/cloud-snow3.svg" alt="Cloud Snow" id="cloud-snow3" width="250px" />
+      <img src="assets/Background/Cloud/cloud-snow4.svg" alt="Cloud Snow" id="cloud-snow4" width="250px" />
+    </div>
+  </div>
+  <div class="content">
+    <h1>WORKS</h1>
+    <div id="works-carousel" class="js-flickity no-page-dots" data-flickity-options='{"wrapAround": true }'>
+      {{#each work_list as |key|}}
+      <a href="/work-details/{{this.folder}}" data-genre="{{this.genre}}" class="carousel-cell" id="{{this.folder}}">
+        <div class="cell-image"><img src="assets/Works/{{this.folder}}/thumbnail.jpg" alt=""></div>
+        <p class="cell-text">{{this.title}}</p>
+      </a>
+      {{/each}}
+    </div>
+    <div class="cfa-button">
+      <a href="/works">
+        <div id="cfa-top">ALL WORKS</div>
+        <div id="cfa-bottom"></div>
+      </a>
+    </div>
+  </div>
+</div>
