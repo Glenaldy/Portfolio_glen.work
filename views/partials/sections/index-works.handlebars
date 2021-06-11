@@ -11,7 +11,7 @@
   <div class="content">
     <h1>WORKS</h1>
     <div id="works-carousel" class="js-flickity no-page-dots"
-      data-flickity-options='{"wrapAround": true, "autoPlay":true }'>
+      data-flickity-options='{"wrapAround": true, "autoPlay":2000 }'>
       {{#each work_list as |key|}}
       <a href="/work-details/{{this.folder}}" data-genre="{{this.genre}}" class="carousel-cell" id="{{this.folder}}">
         <div class="cell-image"><img src="assets/Works/{{this.folder}}/thumbnail.jpg" alt=""></div>
