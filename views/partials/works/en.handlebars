@@ -1,6 +1,7 @@
 <h1>{{data.title}}</h1>
 <p>{{data.description}}</p>
-<div id="works-carousel" class="js-flickity" data-flickity-options='{"wrapAround": true }'>
+<div id="works-carousel" class="js-flickity is-fullscreen"
+  data-flickity-options='{"wrapAround": true, "autoPlay":true}'>
   {{#each imageDir as |img|}}
   <div class="carousel-cell" data-project={{../projectName}}>
     <div class="cell-image"><img src="/assets/Works/{{../projectName}}/{{img.fileName}}{{img.fileExt}}" alt="" />

@@ -15,7 +15,9 @@ $(function () {
   moveCloud($("#cloud-normal").children());
   moveCloud($("#cloud-snow").children());
   shakeBranch($("#sakura").children());
-
+  var flkty = $(".carousel").flickity({
+    fullscreen: true,
+  });
   aboutLanguageSelector();
   function aboutLanguageSelector() {
     $(".language-selector")

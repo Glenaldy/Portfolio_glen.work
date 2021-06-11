@@ -16,13 +16,18 @@ app.set("view engine", "handlebars");
 
 app.use(express.static(__dirname + "/public/"));
 
+//DEFAULT ROUTE
 app.get("/", function (req, res) {
   let work_list = require("./works-data.json");
-  res.render("home", { title: "Glenaldy", work_list: work_list });
+  res.render("home", { title: "Glenaldy @ glen.work", work_list: work_list });
 });
+
+//ABOUT ROUTE
 app.get("/about", function (req, res) {
   res.render("about", { title: "About Me" });
 });
+
+//WORKS ROUTE
 app.get("/works", function (req, res) {
   let work_list = require("./works-data.json");
   res.render("works", {
@@ -30,6 +35,8 @@ app.get("/works", function (req, res) {
     work_list: work_list,
   });
 });
+
+//ABOUT ROUTE
 app.get("/work-details/:project", function (req, res) {
   let work_list = require("./works-data.json");
   const projectName = req.params.project;
@@ -59,6 +66,11 @@ app.get("/work-details/:project", function (req, res) {
   } else {
     res.redirect("/");
   }
+});
+
+//ERROR HANDLING
+app.get("*", function (req, res) {
+  res.status(404).render("error");
 });
 
 const PORT = process.env.PORT || 5000;

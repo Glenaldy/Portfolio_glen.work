@@ -10,7 +10,8 @@
   </div>
   <div class="content">
     <h1>WORKS</h1>
-    <div id="works-carousel" class="js-flickity no-page-dots" data-flickity-options='{"wrapAround": true }'>
+    <div id="works-carousel" class="js-flickity no-page-dots"
+      data-flickity-options='{"wrapAround": true, "autoPlay":true }'>
       {{#each work_list as |key|}}
       <a href="/work-details/{{this.folder}}" data-genre="{{this.genre}}" class="carousel-cell" id="{{this.folder}}">
         <div class="cell-image"><img src="assets/Works/{{this.folder}}/thumbnail.jpg" alt=""></div>
@@ -18,11 +19,9 @@
       </a>
       {{/each}}
     </div>
-    <div class="cfa-button">
-      <a href="/works">
-        <div id="cfa-top">ALL WORKS</div>
-        <div id="cfa-bottom"></div>
-      </a>
-    </div>
+    <a href="/works" class="cfa-button">
+      <div id="cfa-top">ALL WORKS</div>
+      <div id="cfa-bottom"></div>
+    </a>
   </div>
 </div>
