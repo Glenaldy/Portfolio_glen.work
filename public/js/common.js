@@ -15,27 +15,25 @@ $(function () {
   moveCloud($("#cloud-normal").children());
   moveCloud($("#cloud-snow").children());
   shakeBranch($("#sakura").children());
-  var flkty = $(".carousel").flickity({
-    fullscreen: true,
-  });
+
   aboutLanguageSelector();
-  function aboutLanguageSelector() {
-    $(".language-selector")
-      .children()
-      .on("click", function () {
-        let text = $(".about-text");
-        console.log(text);
-        text.removeClass("current");
-        let idLang = $(this).data("lang");
-        console.log(idLang);
-        text.each(function (element) {
-          if ($(this).attr("id") == idLang) {
-            $(this).addClass("current");
-          }
-        });
-      });
-  }
 });
+function aboutLanguageSelector() {
+  $(".language-selector")
+    .children()
+    .on("click", function () {
+      let text = $(".about-text");
+      console.log(text);
+      text.removeClass("current");
+      let idLang = $(this).data("lang");
+      console.log(idLang);
+      text.each(function (element) {
+        if ($(this).attr("id") == idLang) {
+          $(this).addClass("current");
+        }
+      });
+    });
+}
 function workGenre() {
   function openGenre(genre) {
     target.attr("status", "opened");

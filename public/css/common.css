@@ -577,7 +577,7 @@ main {
 
 @media screen and (min-width: 768px) {
   :root {
-    --max-content-size: 1024px; }
+    --max-content-size: clamp(50px, 90%, 1024px); }
 
   .menu-toggle_desc {
     display: block !important; }
@@ -586,6 +586,9 @@ main {
     max-width: var(--max-content-size); }
     #index-home .content > * {
       margin-bottom: 20px; }
+    #index-home .content span {
+      display: block;
+      width: 75%; }
 
   #index-about .content {
     max-width: var(--max-content-size); }
@@ -595,5 +598,8 @@ main {
 
   #work-genre {
     margin-bottom: 50px; } }
+@media screen and (min-width: 1024px) {
+  #index-home .content span {
+    width: 50%; } }
 
 /*# sourceMappingURL=common.css.map */

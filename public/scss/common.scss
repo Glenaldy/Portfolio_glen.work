@@ -711,7 +711,7 @@ main {
 @media screen and (min-width: 768px) {
   :root {
     //--image-cell: 300px;
-    --max-content-size: 1024px;
+    --max-content-size: clamp(50px, 90%, 1024px);
   }
   body {
     //display: none;
@@ -726,6 +726,11 @@ main {
     > * {
       margin-bottom: 20px;
     }
+    span {
+      display: block;
+      width: 75%;
+      //background-color: yellow;
+    }
   }
 
   #index-about .content {
@@ -739,5 +744,13 @@ main {
 
   #work-genre {
     margin-bottom: 50px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  #index-home .content {
+    span {
+      width: 50%;
+      //background-color: yellow;
+    }
   }
 }
