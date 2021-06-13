@@ -19,7 +19,7 @@ app.use(express.static(__dirname + "/public/"));
 //DEFAULT ROUTE
 app.get("/", function (req, res) {
   let work_list = require("./works-data.json");
-  res.render("home", { title: "Glenaldy @ glen.work", work_list: work_list });
+  res.render("home", { title: "Glenaldy | @ glen.work", work_list: work_list });
 });
 
 //ABOUT ROUTE

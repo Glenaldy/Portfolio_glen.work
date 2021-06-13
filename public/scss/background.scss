@@ -76,10 +76,10 @@ IT IS FOR THE PURPOSE OF VISUAL DESIGN ONLY
   ****************/
 #index-about .background {
   overflow: visible;
+  height: 100%;
 }
-
 .anti-overflow {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 #autumn {
   width: clamp(50%, 90%, 500px);
@@ -87,16 +87,12 @@ IT IS FOR THE PURPOSE OF VISUAL DESIGN ONLY
 }
 #kyoto {
   position: absolute;
+  margin: 0 auto;
   width: 100%;
-  bottom: clamp(-10%, -25px, -1%);
-  left: 0;
-  z-index: 1;
-}
-#temple {
-  position: absolute;
-  width: 40%;
-  bottom: clamp(-100%, -80px, -1%);
-  right: 0;
+  bottom: clamp(-40%, -300px, -30%);
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
   z-index: 1;
 }
 #about-page .background {
@@ -120,10 +116,10 @@ IT IS FOR THE PURPOSE OF VISUAL DESIGN ONLY
   ****************/
 #bridge {
   position: absolute;
-  width: 200%;
-  bottom: -50px;
-  transform: translate(-50%, 0);
+  width: 180%;
+  transform: translate(-50%, 40%);
   left: 50%;
+  bottom: 0;
   z-index: 1;
 }
 #cloud-snow {
@@ -138,7 +134,7 @@ IT IS FOR THE PURPOSE OF VISUAL DESIGN ONLY
   width: 100%;
   height: 100%;
   > * {
-    //width: 40vw;
+    width: clamp(50px, 30vw, 150px);
     position: absolute;
   }
   #cloud-snow1 {
@@ -164,15 +160,8 @@ IT IS FOR THE PURPOSE OF VISUAL DESIGN ONLY
     width: 100%;
     bottom: clamp(-20%, -10%, -5%);
   }
-  #index-about {
-    #kyoto {
-      bottom: clamp(-10%, -15%, -10%);
-    }
-    #temple {
-      bottom: -15%;
-      right: 0;
-      z-index: 1;
-    }
+  #bridge {
+    width: 100%;
   }
 }
 
@@ -187,18 +176,6 @@ IT IS FOR THE PURPOSE OF VISUAL DESIGN ONLY
   #cloud-normal {
     > * {
       width: clamp(50px, 15vw, 200px);
-    }
-  }
-  #index-about {
-    #kyoto {
-      bottom: clamp(-20%, -15%, -10%);
-    }
-    #temple {
-      position: absolute;
-      width: 40%;
-      bottom: -15%;
-      right: 0;
-      z-index: 1;
     }
   }
 }
