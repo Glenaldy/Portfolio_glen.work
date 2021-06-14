@@ -14,12 +14,18 @@
   --screen-padding-top: 45px;
   --screen-padding-side: 20px;
   --screen-padding-bottom: 30px;
+  --header-padding-side: 20px;
+  --max-content-size: clamp(200px, 100%, 1366px);
 
   --bold-text-weight: 700;
   --semibold-text-weight: 600;
   --medium-text-weight: 500;
   --light-text-weight: 300;
-  --image-cell: calc(100vw - (var(--screen-padding-side) * 2));
+  --image-cell: clamp(
+    200px,
+    500px,
+    calc(100vw - (var(--screen-padding-side) * 2))
+  );
 }
 .material-icons.md-48 {
   font-size: 48px;
@@ -48,7 +54,7 @@ header#global-header {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding: var(--screen-padding-top) var(--screen-padding-side) 0;
+  padding: var(--screen-padding-top) var(--header-padding-side) 0;
   z-index: 999;
   .global-header_home {
     display: flex;
@@ -120,10 +126,13 @@ header#global-header {
   display: none;
   .menu-toggle {
     position: absolute;
-    top: var(--screen-padding-top);
-    right: var(--screen-padding-side);
+    top: 0;
+    right: 0;
+    padding-top: var(--screen-padding-top);
+    padding-right: var(--header-padding-side);
     z-index: 5001;
   }
+
   .menu-toggle.toggle-active > .bar1 {
     transform: rotate(0deg);
     transform-origin: top right;
@@ -307,8 +316,10 @@ main {
   *****************/
 #index-about {
   height: 100%;
+  display: flex;
+  align-items: center;
   .content {
-    //background-color: rgba(0, 255, 0, 0.2);
+    max-width: var(--max-content-size);
     z-index: 100;
     text-align: right;
     padding: 100px var(--screen-padding-side);
@@ -334,14 +345,14 @@ main {
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       transition: max-height 0.5s ease-in;
-
       p {
-        margin-bottom: 20px;
+        margin-bottom: 50px;
       }
     }
     #about-text.expand {
       max-height: 5000px;
       background: white;
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -407,15 +418,9 @@ main {
   z-index: 200;
   background-color: #3399ff;
   display: flex;
-  flex-direction: column;
+
   align-items: center;
   .content {
-    padding-top: clamp(
-      var(--screen-padding-top),
-      100px,
-      calc(var(--screen-padding-top) + 20vh)
-    );
-    padding-bottom: 20vh;
     text-align: center;
     width: 100%;
     display: flex;
@@ -426,7 +431,8 @@ main {
       margin-bottom: 25px;
     }
     #works-carousel {
-      width: 100%;
+      max-width: 100%;
+      width: calc(var(--image-cell) * 3);
     }
     .cfa-button {
       width: 180px;
@@ -466,16 +472,17 @@ main {
 #about-page {
   height: 100%;
   .content {
+    max-width: var(--max-content-size);
     z-index: 100;
     text-align: center;
-    padding: 200px var(--screen-padding-side);
+    padding: 20vh var(--screen-padding-side) 20vw;
     height: fit-content;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    > * {
-      margin-bottom: 20px;
+    * {
+      margin-bottom: 10px;
     }
     h1 {
       font-weight: var(--semibold-text-weight);
@@ -539,24 +546,33 @@ main {
       p.paragraph {
         text-align: left;
       }
-      .point-cell {
-        margin-bottom: 25px;
-        width: 300px;
+      .points {
+        width: 100%;
         display: flex;
-        flex-direction: column;
+        justify-content: space-around;
         align-items: center;
-        > * {
-          margin-bottom: 10px;
-        }
-        .point-icon {
-          width: 200px;
-          img {
-            width: 100%;
+        flex-wrap: wrap;
+        .point-cell {
+          margin: 0 auto;
+          margin: 25px 0;
+          width: 250px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          * {
+            margin-bottom: 10px;
           }
-        }
-        h3 {
-          font-size: var(--general-text-size);
-          font-weight: var(--bold-text-weight);
+          .point-icon {
+            height: 150px;
+            img {
+              height: 100%;
+            }
+          }
+          h3 {
+            font-size: var(--general-text-size);
+            font-weight: var(--bold-text-weight);
+          }
         }
       }
       .paragraph.center {
@@ -580,9 +596,9 @@ main {
     padding: 100px var(--screen-padding-side);
     height: fit-content;
     width: 100%;
+    max-width: 1200px;
     #work-genre {
       font-size: var(--general-text-size);
-
       ul {
         display: flex;
         flex-direction: column;
@@ -620,14 +636,14 @@ main {
       align-items: center;
       justify-content: space-around;
       .work-window {
-        margin: var(--screen-padding-side);
+        margin: 20px 10px;
         display: none;
         flex-direction: column;
         align-items: center;
-        height: auto;
+        height: 300px;
         /*mobile*/
         width: var(--image-cell);
-        max-width: 500px;
+        max-width: 300px;
         .work-image {
           width: 100%;
           padding-top: 75%;
@@ -664,6 +680,7 @@ main {
       margin-bottom: 20px;
       padding-left: var(--screen-padding-side);
       padding-right: var(--screen-padding-side);
+      max-width: var(--max-content-size);
     }
     text-align: center;
     padding-top: clamp(
@@ -677,7 +694,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     h1 {
       font-size: var(--big-text-size);
       font-weight: var(--semibold-text-weight);
@@ -694,6 +710,7 @@ main {
       letter-spacing: 0.25em;
     }
     #works-carousel {
+      max-width: none;
       padding-left: 0;
       padding-right: 0;
       width: 100%;
@@ -706,52 +723,94 @@ main {
     .paragraph {
       text-align: left;
     }
+    .video {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      background-color: white;
+      border: solid white;
+      border-radius: 20px;
+      overflow: hidden;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 }
 
 @media screen and (min-width: 768px) {
   :root {
+    --screen-padding-side: 50px;
     //--image-cell: 300px;
-    --max-content-size: clamp(50px, 90%, 1024px);
   }
-  body {
-    //display: none;
-  }
-
   .menu-toggle_desc {
     display: block !important;
   }
-
   #index-home .content {
-    max-width: var(--max-content-size);
+    padding-top: 25vh;
     > * {
       margin-bottom: 20px;
     }
     span {
       display: block;
       width: 75%;
-      //background-color: yellow;
     }
   }
-
   #index-about .content {
-    max-width: var(--max-content-size);
+    //background: yellowgreen;
+    h1 {
+      margin-bottom: 50px;
+    }
+    .cfa-button {
+      margin-bottom: 100px;
+      //background: yellowgreen;
+    }
   }
   #index-works .content {
     > * {
       margin-bottom: 50px;
     }
   }
-
   #work-genre {
     margin-bottom: 50px;
   }
+  #about-page {
+    .content {
+      padding-bottom: 30vw;
+      * {
+        margin-bottom: 30px;
+      }
+    }
+  }
+  #works-page {
+    .content {
+      padding-bottom: 200px;
+    }
+  }
 }
 @media screen and (min-width: 1024px) {
+  :root {
+    --general-text-size: 18px;
+    --title-text-size: 64px;
+    --medium-text-size: 24px;
+    --medium-big-text-size: 28px;
+
+    --screen-padding-side: 75px;
+    --header-padding-side: 50px;
+  }
   #index-home .content {
     span {
       width: 50%;
-      //background-color: yellow;
     }
+  }
+}
+@media screen and (min-width: 1366px) {
+  :root {
+    --title-text-size: 72px;
+    --screen-padding-side: 100px;
   }
 }
