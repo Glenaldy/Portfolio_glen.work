@@ -7,6 +7,22 @@ html {
   overflow-y: scroll;
   overflow-y: overlay; }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px; }
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none; }
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4); }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.8); }
+
 :root {
   --general-text-size: 17px;
   --title-text-size: 48px;
