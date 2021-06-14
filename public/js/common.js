@@ -13,13 +13,18 @@ $(function () {
   scrollUp($(".scroll-up"));
   /*Background related*/
 
-  // $("#cloud-normal")
-  //   .children()
-  //   .each(function () {
-  //     moveCloud(this);
-  //   });
+  $("#cloud-normal")
+    .children()
+    .each(function () {
+      moveCloud(this);
+    });
+  $("#cloud-snow")
+    .children()
+    .each(function () {
+      moveCloud(this);
+    });
   //moveCloud($("#cloud-snow").children());
-  moveCloud($("#cloud-normal"));
+  //moveCloud($("#cloud-normal"));
   shakeBranch($("#sakura").children());
 
   aboutLanguageSelector();
@@ -122,34 +127,22 @@ function textExpander(source, target) {
   });
 }
 function moveCloud(cloud) {
-  // $(cloud).each(function () {
-  //   let width = $(document).width() * 2;
-  //   let timeRand = getRndInteger(20000, 40000);
-  //   $(this).transition({ x: width }, timeRand, "linear", function () {
-  //     $(cloud).each(function () {
-  //       $(this).transition({ x: -width }, 0, function () {
-  //         moveCloud(this);
-  //       });
-  //     });
-  //   });
-  // });
-  let width = $(document).width() * 2,
-    step = 1,
-    current = parseInt($(cloud).css("left"));
-
-  function move() {
-    if (current < width) {
-      //console.log(current);
-      requestAnimationFrame(move);
-      $(cloud).css("left", current + "px");
-      current += step;
-    } else {
-      //console.log("done");
-      current = 0;
-      move();
-    }
+  function moveThis() {
+    let width = $(document).width() + 300,
+      current = parseInt($(cloud).css("left")),
+      timeRand = getRndInteger(20000, 30000),
+      random = (timeRand * (width - current)) / width;
+    console.log(random);
+    $(cloud)
+      .transition({ x: width - current }, random, "linear", function () {
+        console.log("move done");
+      })
+      .transition({ x: 0 }, 0, function () {
+        $(cloud).css("left", "-300px");
+        moveThis();
+      });
   }
-  move();
+  moveThis();
 }
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
