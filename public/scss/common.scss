@@ -293,6 +293,7 @@ main {
     22vh,
     calc(var(--screen-padding-top) + 20vh)
   );
+  max-width: var(--max-content-size);
   width: 100%;
   > * {
     margin-bottom: 5px;

@@ -12,8 +12,14 @@ $(function () {
   headerOpacity();
   scrollUp($(".scroll-up"));
   /*Background related*/
-  moveCloud($("#cloud-normal").children());
-  moveCloud($("#cloud-snow").children());
+
+  // $("#cloud-normal")
+  //   .children()
+  //   .each(function () {
+  //     moveCloud(this);
+  //   });
+  //moveCloud($("#cloud-snow").children());
+  moveCloud($("#cloud-normal"));
   shakeBranch($("#sakura").children());
 
   aboutLanguageSelector();
@@ -116,17 +122,34 @@ function textExpander(source, target) {
   });
 }
 function moveCloud(cloud) {
-  $(cloud).each(function () {
-    let width = $(document).width() * 2;
-    let timeRand = getRndInteger(20000, 40000);
-    $(this).transition({ x: width }, timeRand, "linear", function () {
-      $(cloud).each(function () {
-        $(this).transition({ x: -width }, 0, function () {
-          moveCloud(this);
-        });
-      });
-    });
-  });
+  // $(cloud).each(function () {
+  //   let width = $(document).width() * 2;
+  //   let timeRand = getRndInteger(20000, 40000);
+  //   $(this).transition({ x: width }, timeRand, "linear", function () {
+  //     $(cloud).each(function () {
+  //       $(this).transition({ x: -width }, 0, function () {
+  //         moveCloud(this);
+  //       });
+  //     });
+  //   });
+  // });
+  let width = $(document).width() * 2,
+    step = 1,
+    current = parseInt($(cloud).css("left"));
+
+  function move() {
+    if (current < width) {
+      //console.log(current);
+      requestAnimationFrame(move);
+      $(cloud).css("left", current + "px");
+      current += step;
+    } else {
+      //console.log("done");
+      current = 0;
+      move();
+    }
+  }
+  move();
 }
 function getRndInteger(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
