@@ -51,7 +51,7 @@ header#global-header {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding: var(--screen-padding-top) var(--header-padding-side) 0;
+  padding: var(--screen-padding-top) var(--header-padding-side);
   z-index: 999; }
   header#global-header .global-header_home {
     display: flex;

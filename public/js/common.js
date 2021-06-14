@@ -23,8 +23,6 @@ $(function () {
     .each(function () {
       moveCloud(this);
     });
-  //moveCloud($("#cloud-snow").children());
-  //moveCloud($("#cloud-normal"));
   shakeBranch($("#sakura").children());
 
   aboutLanguageSelector();
