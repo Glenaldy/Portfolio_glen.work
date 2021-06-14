@@ -3,6 +3,10 @@
   color: white;
   font-family: "Source Code Pro"; }
 
+html {
+  overflow-y: scroll;
+  overflow-y: overlay; }
+
 :root {
   --general-text-size: 17px;
   --title-text-size: 48px;
