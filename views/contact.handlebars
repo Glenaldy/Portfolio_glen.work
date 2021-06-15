@@ -1,0 +1,39 @@
+{{>header}}
+{{>menu-overlay}}
+<main>
+    <div id="contact">
+        <div class="background">
+            <div id="cloud-normal">
+                <img src="assets/Background/Cloud/cloud-normal1.svg" alt="Cloud" id="cloud-normal1" />
+                <img src="assets/Background/Cloud/cloud-normal2.svg" alt="Cloud" id="cloud-normal2" />
+                <img src="assets/Background/Cloud/cloud-normal3.svg" alt="Cloud" id="cloud-normal3" />
+                <img src="assets/Background/Cloud/cloud-normal4.svg" alt="Cloud" id="cloud-normal4" />
+                <img src="assets/Background/Cloud/cloud-normal5.svg" alt="Cloud" id="cloud-normal5" />
+            </div>
+            <div id="fuji">
+                <img src="assets/Background/home-fuji.svg" alt="Fuji and Town" />
+            </div>
+            <div id="sakura">
+                <img src="assets/Background/sakura-tree/sakura-tree1.svg" alt="sakura" id="sakura-tree1" />
+                <img src="assets/Background/sakura-tree/sakura-tree2.svg" alt="sakura" id="sakura-tree2" />
+                <img src="assets/Background/sakura-tree/sakura-tree3.svg" alt="sakura" id="sakura-tree3" />
+                <img src="assets/Background/sakura-tree/sakura-tree4.svg" alt="sakura" id="sakura-tree4" />
+            </div>
+        </div>
+        <div class="content">
+            <h3>
+                Get in Touch
+            </h3>
+            <p>
+                I would like to know you better
+            </p>
+            <form action="send" id="contact-form" method="post" enctype="multipart/form-data">
+                <input type="text" name="email" placeholder="Email | Eメール" required>
+                <input type="text" name="name" placeholder="Name | 名前" required>
+                <textarea name="message" rows="5" placeholder="Message |　メッセージ" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</main>
+{{>footer}}

@@ -276,6 +276,7 @@ main {
   #index-home .content h1 {
     line-height: 95%; }
   #index-home .content span {
+    max-width: 50%;
     line-height: 30px;
     font-size: var(--general-text-size);
     font-weight: 500; }
@@ -632,6 +633,42 @@ main {
         left: 0;
         width: 100%;
         height: 100%; }
+
+#contact .content {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column; }
+  #contact .content > * {
+    margin-bottom: 20px; }
+  #contact .content h3 {
+    font-size: var(--big-text-size); }
+  #contact .content form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; }
+    #contact .content form > *:not(:last-child) {
+      margin-bottom: 10px;
+      min-width: 100%;
+      background-color: rgba(0, 0, 0, 0); }
+    #contact .content form > * {
+      padding: 5px 10px;
+      border-radius: 20px;
+      border: solid white 2px; }
+    #contact .content form ::placeholder {
+      color: rgba(0, 0, 0, 0.5); }
+    #contact .content form > *:focus {
+      color: black;
+      background-color: white; }
+    #contact .content form > *:valid {
+      color: black;
+      background-color: white; }
+    #contact .content form button {
+      min-width: none;
+      width: 50%;
+      max-width: 200px; }
 
 @media screen and (min-width: 768px) {
   :root {

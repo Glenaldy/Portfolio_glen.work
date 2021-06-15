@@ -68,6 +68,12 @@ app.get("/work-details/:project", function (req, res) {
   }
 });
 
+app.get("/contact", function (req, res) {
+  res.render("contact", {
+    title: "Contact Me",
+  });
+});
+
 //ERROR HANDLING
 app.get("*", function (req, res) {
   res.status(404).render("error");
