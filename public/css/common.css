@@ -647,6 +647,8 @@ main {
   margin-top: clamp(var(--screen-padding-top), 22vh, calc(var(--screen-padding-top) + 20vh)); }
   #contact .content > * {
     margin-bottom: 10px; }
+  #contact .content h2 {
+    font-weight: var(--bold-text-weight); }
   #contact .content h3 {
     font-size: 30px; }
   #contact .content form {

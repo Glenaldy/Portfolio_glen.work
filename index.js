@@ -2,8 +2,6 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 
 //Google Analytics
-let expressGoogleAnalytics = require("express-google-analytics");
-let analytics = expressGoogleAnalytics("G-ZP9X3WM11Q");
 
 //Nodemailer for contacts
 const nodemailer = require("nodemailer");
@@ -11,13 +9,12 @@ const multiparty = require("multiparty");
 require("dotenv").config();
 
 const work = require("./work");
+const { response } = require("express");
 
 const app = express();
 
-app.use(analytics);
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
 app.use(express.static(__dirname + "/public/"));
 
 //DEFAULT ROUTE
@@ -111,9 +108,13 @@ app.post("/send", (req, res) => {
     transporter.sendMail(mail, (err, data) => {
       if (err) {
         console.log(err);
-        res.status(500).send("Something went wrong.");
+        res.redirect(500, "*");
       } else {
-        res.status(200).send("Email successfully sent to recipient!");
+        let confirmation = "Sent, thank you for reaching out";
+        res.render("contact", {
+          title: "Contact Me",
+          confirmation: confirmation,
+        });
       }
     });
   });
@@ -121,6 +122,7 @@ app.post("/send", (req, res) => {
 //ERROR HANDLING
 app.get("*", function (req, res) {
   res.status(404).render("error");
+  res.status(500).send("Something broke!");
 });
 
 const PORT = process.env.PORT || 5000;

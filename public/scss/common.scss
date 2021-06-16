@@ -782,6 +782,9 @@ main {
     > * {
       margin-bottom: 10px;
     }
+    h2 {
+      font-weight: var(--bold-text-weight);
+    }
     h3 {
       font-size: 30px;
     }
