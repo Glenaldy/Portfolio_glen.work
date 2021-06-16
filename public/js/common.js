@@ -130,10 +130,10 @@ function moveCloud(cloud) {
       current = parseInt($(cloud).css("left")),
       timeRand = getRndInteger(20000, 30000),
       random = (timeRand * (width - current)) / width;
-    console.log(random);
+    //console.log(random);
     $(cloud)
       .transition({ x: width - current }, random, "linear", function () {
-        console.log("move done");
+        //console.log("move done");
       })
       .transition({ x: 0 }, 0, function () {
         $(cloud).css("left", "-300px");
