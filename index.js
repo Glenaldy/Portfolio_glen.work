@@ -2,8 +2,8 @@ const express = require("express");
 const exphbs = require("express-handlebars");
 
 //Google Analytics
-const expressGoogleAnalytics = require("express-google-analytics");
-const analytics = expressGoogleAnalytics(process.env.NEXT_PUBLIC_GA_ID);
+let expressGoogleAnalytics = require("express-google-analytics");
+let analytics = expressGoogleAnalytics("G-ZP9X3WM11Q");
 
 //Nodemailer for contacts
 const nodemailer = require("nodemailer");
@@ -14,10 +14,10 @@ const work = require("./work");
 
 const app = express();
 
+app.use(analytics);
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.use(analytics);
 app.use(express.static(__dirname + "/public/"));
 
 //DEFAULT ROUTE
@@ -82,7 +82,6 @@ app.get("/contact", function (req, res) {
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
-  secure: true,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASS,
