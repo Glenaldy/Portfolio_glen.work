@@ -636,15 +636,18 @@ main {
 
 #contact .content {
   position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 var(--screen-padding-side);
+  transform: translate(-50%, 0);
   left: 50%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-top: clamp(var(--screen-padding-top), 22vh, calc(var(--screen-padding-top) + 20vh)); }
   #contact .content > * {
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
   #contact .content h3 {
-    font-size: var(--big-text-size); }
+    font-size: 30px; }
   #contact .content form {
     display: flex;
     flex-direction: column;
@@ -658,7 +661,7 @@ main {
       border-radius: 20px;
       border: solid white 2px; }
     #contact .content form ::placeholder {
-      color: rgba(0, 0, 0, 0.5); }
+      color: rgba(255, 255, 255, 0.5); }
     #contact .content form > *:focus {
       color: black;
       background-color: white; }
