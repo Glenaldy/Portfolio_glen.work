@@ -102,15 +102,12 @@ app.post("/send", (req, res) => {
     Object.keys(fields).forEach(function (property) {
       data[property] = fields[property].toString();
     });
-
     const mail = {
       from: data.name,
       to: process.env.EMAIL,
       subject: data.subject,
       text: `${data.name} <${data.email}> \n${data.message}`,
     };
-
-    //3.
     transporter.sendMail(mail, (err, data) => {
       if (err) {
         console.log(err);
