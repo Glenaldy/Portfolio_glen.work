@@ -6,6 +6,7 @@
 html {
   overflow-y: scroll;
   overflow-y: overlay;
+  cursor: default;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -899,4 +900,7 @@ main {
     --title-text-size: 72px;
     --screen-padding-side: 100px;
   }
+}
+.clickable {
+  cursor: pointer;
 }
