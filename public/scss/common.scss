@@ -868,6 +868,15 @@ main {
       padding-bottom: 200px;
     }
   }
+  #work-details {
+    .content {
+      padding-top: clamp(
+        var(--screen-padding-top),
+        150px,
+        calc(var(--screen-padding-top) + 20vh)
+      );
+    }
+  }
   #contact {
     .content {
       * {

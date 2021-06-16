@@ -708,6 +708,9 @@ main {
   #works-page .content {
     padding-bottom: 200px; }
 
+  #work-details .content {
+    padding-top: clamp(var(--screen-padding-top), 150px, calc(var(--screen-padding-top) + 20vh)); }
+
   #contact .content * {
     margin-bottom: 20px; }
   #contact .content form > *:not(:last-child) {

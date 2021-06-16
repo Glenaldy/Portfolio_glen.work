@@ -1,23 +1,23 @@
-const e = require("express");
 const express = require("express");
 const exphbs = require("express-handlebars");
+
+//Google Analytics
+const expressGoogleAnalytics = require("express-google-analytics");
+const analytics = expressGoogleAnalytics(process.env.NEXT_PUBLIC_GA_ID);
+
+//Nodemailer for contacts
 const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
 require("dotenv").config();
 
 const work = require("./work");
 
-// let work_list = require("./works-data.json");
-// let title_list = [];
-// for (let key in work_list) {
-//   title_list.push(work_list[key]["title"]);
-// }
-
 const app = express();
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+app.use(analytics);
 app.use(express.static(__dirname + "/public/"));
 
 //DEFAULT ROUTE
@@ -68,7 +68,7 @@ app.get("/work-details/:project", function (req, res) {
       work_list: work_list,
     });
   } else {
-    res.redirect("/");
+    res.status(404).render("error");
   }
 });
 
@@ -82,6 +82,7 @@ app.get("/contact", function (req, res) {
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
+  secure: true,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASS,
