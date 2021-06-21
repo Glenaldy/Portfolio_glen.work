@@ -1,6 +1,6 @@
 {
   "legase": {
-    "genre": "illustrator website printing",
+    "genre": "illustrator website product printing",
     "title": "Legase, Original Multi Media Project",
     "folder": "legase",
     "descriptionen": "A multimedia project consists of printed book and website about adventure in fantasy world. The website is currently live at legase.site",
@@ -27,7 +27,7 @@
     "image10jp": "印刷本品"
   },
   "reddit_fes": {
-    "genre": "illustrator",
+    "genre": "illustrator printing",
     "title": "Reddit Love Live Community Project",
     "folder": "reddit_fes",
     "descriptionen": "A big commision project from overseas community to Love Live! Fest™ concert",
@@ -44,7 +44,7 @@
     "image5jp": "アートボードのカット中"
   },
   "cup_packaging": {
-    "genre": "illustrator product",
+    "genre": "illustrator product printing",
     "title": "TungTau® Product Packaging",
     "folder": "cup_packaging",
     "descriptionen": "Cup and plate set packaging design prototype for a classic coffee shop in Indonesia",
@@ -67,7 +67,7 @@
     "image8jp": "表紙"
   },
   "tungtau_brochure": {
-    "genre": "illustrator product",
+    "genre": "illustrator printing",
     "title": "TungTau® Brochure",
     "folder": "tungtau_brochure",
     "descriptionen": "Brochure for promotion for a classic coffee shop in Indonesia",
@@ -133,7 +133,7 @@
     "image5jp": "絵コンテ"
   },
   "chicken_brochure": {
-    "genre": "illustrator product",
+    "genre": "illustrator printing",
     "title": "Berkat Anugerah Brochure",
     "folder": "chicken_brochure",
     "descriptionen": "Brochure designs for chicken meat supplier in Indonesia",
@@ -155,7 +155,7 @@
     "image1jp": "ポスター"
   },
   "stage_3d": {
-    "genre": "3d",
+    "genre": "illustrator 3d printing",
     "title": "Niji Live House 3D",
     "folder": "stage_3d",
     "descriptionen": "A project about imaginary live house that's created in Autodesk Maya",
@@ -172,7 +172,7 @@
     "image5jp": "上面"
   },
   "whale_tours": {
-    "genre": "illustrator website",
+    "genre": "illustrator website logo",
     "title": "Whale Tours",
     "folder": "whale_tours",
     "descriptionen": "This project is about imaginary travel company called Whale Tours",
