@@ -1,4 +1,3 @@
-const e = require("express");
 const fs = require("fs");
 const path = require("path");
 
@@ -23,7 +22,9 @@ function getData(location, dataName) {
         let element = path.parse(fileDirent.name);
         let fileName = element.name;
         let fileExt = element.ext;
-        array.push({ fileName, fileExt });
+        let en = fileName + "en";
+        let jp = fileName + "jp";
+        array.push({ fileName, fileExt, en, jp });
       }
     } else break;
   }

@@ -1,5 +1,4 @@
 <h1>{{data.title}}</h1>
-<p>{{data.description}}</p>
 <div id="works-carousel" class="js-flickity is-fullscreen"
   data-flickity-options='{"autoPlay":2000, "wrapAround": true }'>
   {{#each imageDir as |img|}}
@@ -7,9 +6,12 @@
     <div class="cell-image"><img src="/assets/Works/{{../projectName}}/{{img.fileName}}{{img.fileExt}}" alt="" />
     </div>
     <p class="cell-text">
-      {{lookup ../data img.fileName}}
+      {{lookup ../data img.en}}
+      <br>
+      {{lookup ../data img.jp}}
     </p>
   </div>
   {{/each}}
 </div>
+<p>{{data.descriptionen}}<br>{{data.descriptionjp}}</p>
 {{> (lookup . "project_details")}}
