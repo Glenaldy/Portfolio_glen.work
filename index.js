@@ -16,6 +16,14 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.use(express.static(__dirname + "/public/"));
 
+//Force HTTPS
+if (process.env.NODE_ENV === "production") {
+  app.use((req, res, next) => {
+    if (req.header("x-forwarded-proto") !== "https")
+      res.redirect(`https://${req.header("host")}${req.url}`);
+    else next();
+  });
+}
 //DEFAULT ROUTE
 app.get("/", function (req, res) {
   let work_list = require("./works-data.json");
