@@ -375,6 +375,7 @@ main {
   display: flex;
   align-items: center; }
   #index-works .content {
+    padding: 50px 0;
     text-align: center;
     width: 100%;
     display: flex;
@@ -480,23 +481,18 @@ main {
       #about-page .content .about-text p.paragraph {
         text-align: left; }
       #about-page .content .about-text .points {
+        margin-top: 10px;
         width: 100%;
         display: flex;
         justify-content: space-around;
-        align-items: center;
         flex-wrap: wrap; }
         #about-page .content .about-text .points .point-cell {
-          margin: 0 auto;
-          margin: 25px 0;
           width: 250px;
           display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: space-between; }
-          #about-page .content .about-text .points .point-cell * {
-            margin-bottom: 10px; }
+          flex-direction: column; }
           #about-page .content .about-text .points .point-cell .point-icon {
-            height: 150px; }
+            height: 150px;
+            width: 100%; }
             #about-page .content .about-text .points .point-cell .point-icon img {
               height: 100%; }
           #about-page .content .about-text .points .point-cell h3 {
@@ -506,6 +502,33 @@ main {
         text-align: center; }
     #about-page .content .about-text.current {
       display: flex; }
+    #about-page .content .cfa-button {
+      width: 180px;
+      height: 60px;
+      font-size: var(--general-text-size);
+      font-weight: var(--semibold-text-weight);
+      position: relative; }
+      #about-page .content .cfa-button #cfa-top {
+        position: absolute;
+        height: 45px;
+        width: 180px;
+        border-radius: 45px;
+        border: 4px solid #400e4c;
+        background-color: #bc871d;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--medium-text-size); }
+      #about-page .content .cfa-button #cfa-bottom {
+        position: absolute;
+        transform: translate(0, 23px);
+        background-color: #cc5d11;
+        height: 35px;
+        width: 180px;
+        border-radius: 0px 0px 20px 20px;
+        border: 4px solid #400e4c;
+        z-index: 1; }
 
 #works-page {
   z-index: 200;

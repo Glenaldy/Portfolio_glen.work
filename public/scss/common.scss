@@ -440,9 +440,9 @@ main {
   z-index: 200;
   background-color: #3399ff;
   display: flex;
-
   align-items: center;
   .content {
+    padding: 50px 0;
     text-align: center;
     width: 100%;
     display: flex;
@@ -569,24 +569,18 @@ main {
         text-align: left;
       }
       .points {
+        margin-top: 10px;
         width: 100%;
         display: flex;
         justify-content: space-around;
-        align-items: center;
         flex-wrap: wrap;
         .point-cell {
-          margin: 0 auto;
-          margin: 25px 0;
           width: 250px;
           display: flex;
           flex-direction: column;
-          align-items: center;
-          justify-content: space-between;
-          * {
-            margin-bottom: 10px;
-          }
           .point-icon {
             height: 150px;
+            width: 100%;
             img {
               height: 100%;
             }
@@ -603,6 +597,36 @@ main {
     }
     .about-text.current {
       display: flex;
+    }
+    .cfa-button {
+      width: 180px;
+      height: 60px;
+      font-size: var(--general-text-size);
+      font-weight: var(--semibold-text-weight);
+      position: relative;
+      #cfa-top {
+        position: absolute;
+        height: 45px;
+        width: 180px;
+        border-radius: 45px;
+        border: 4px solid #400e4c;
+        background-color: #bc871d;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: var(--medium-text-size);
+      }
+      #cfa-bottom {
+        position: absolute;
+        transform: translate(0, 23px);
+        background-color: #cc5d11;
+        height: 35px;
+        width: 180px;
+        border-radius: 0px 0px 20px 20px;
+        border: 4px solid #400e4c;
+        z-index: 1;
+      }
     }
   }
 }
