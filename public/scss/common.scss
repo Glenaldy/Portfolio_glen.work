@@ -387,7 +387,7 @@ main {
         display: none;
         opacity: 0;
         font-size: var(--general-text-size);
-        font-weight: var(--semibold-text-weight);
+        font-weight: var(--medium-text-weight);
         margin-right: 10px;
       }
       #cfa-press {
@@ -559,6 +559,7 @@ main {
       display: none;
       flex-direction: column;
       align-items: center;
+      justify-content: center;
       .about-heading {
         margin-bottom: 30px;
       }
@@ -599,15 +600,15 @@ main {
       display: flex;
     }
     .cfa-button {
-      width: 180px;
+      width: 200px;
       height: 60px;
       font-size: var(--general-text-size);
-      font-weight: var(--semibold-text-weight);
+      font-weight: var(--medium-text-weight);
       position: relative;
       #cfa-top {
         position: absolute;
         height: 45px;
-        width: 180px;
+        width: 200px;
         border-radius: 45px;
         border: 4px solid #400e4c;
         background-color: #bc871d;
@@ -622,7 +623,7 @@ main {
         transform: translate(0, 23px);
         background-color: #cc5d11;
         height: 35px;
-        width: 180px;
+        width: 200px;
         border-radius: 0px 0px 20px 20px;
         border: 4px solid #400e4c;
         z-index: 1;
