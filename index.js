@@ -9,7 +9,6 @@ const multiparty = require("multiparty");
 require("dotenv").config();
 
 const work = require("./work");
-const { response } = require("express");
 
 const app = express();
 
@@ -122,7 +121,6 @@ app.post("/send", (req, res) => {
 //ERROR HANDLING
 app.get("*", function (req, res) {
   res.status(404).render("error");
-  res.status(500).send("Something broke!");
 });
 
 const PORT = process.env.PORT || 5000;

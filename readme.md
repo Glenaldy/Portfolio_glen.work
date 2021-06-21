@@ -11,7 +11,7 @@ With handlebars and expressJS, Header, Footer, and the Overlay menu is currently
 ## The homepage/index
 
 It splits into 3 sections. Home, About, and Work. <br>
-The Home serve as eye candy and at the bottom right the curfing effect makes sure viewer scroll down.
+The Home serve as eye candy and at the bottom right the curving effect makes sure viewer scroll down.
 
 The About section is quote from the [about](https://www.glen.work/about/) page. To make sure it doesn't fill up the page there's a button that increase the height of the section. At the end there's a button that brings the visitor the about page.
 
