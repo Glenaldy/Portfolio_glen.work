@@ -1,6 +1,6 @@
 # <img alt="logo" src="https://www.glen.work/assets/Logo/Main-Logo.svg" width="50"  /> Welcome to **glen.work**
 
-This is my current portfolio website, it is now live in **[glen.work](https://www.glen.work/)**
+This is my current portfolio website, it is now live at **[glen.work](https://www.glen.work/)**
 
 It is a dynamic website created in ExpressJS, templated using handlebars, and hosted in heroku.
 
