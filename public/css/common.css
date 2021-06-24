@@ -258,6 +258,9 @@ main {
   height: fit-content;
   margin: 0 auto; }
 
+h1 {
+  filter: drop-shadow(2px 2px 3px #0000006b); }
+
 /****************
     INDEX SECTION HOME
 *****************/
@@ -265,10 +268,13 @@ main {
   background-color: #3399ff; }
 
 #index-home .content {
+  filter: drop-shadow(2px 1px 4px #0000006b);
   padding: 0 var(--screen-padding-side);
   padding-top: clamp(var(--screen-padding-top), 22vh, calc(var(--screen-padding-top) + 20vh));
   max-width: var(--max-content-size);
   width: 100%; }
+  #index-home .content h1 {
+    filter: none; }
   #index-home .content > * {
     margin-bottom: 5px; }
   #index-home .content p {

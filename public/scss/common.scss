@@ -300,6 +300,9 @@ main {
   //max-width: 1024px;
   margin: 0 auto;
 }
+h1 {
+  filter: drop-shadow(2px 2px 3px #0000006b);
+}
 /****************
     INDEX SECTION HOME
 *****************/
@@ -307,6 +310,10 @@ main {
   background-color: #3399ff;
 }
 #index-home .content {
+  h1 {
+    filter: none;
+  }
+  filter: drop-shadow(2px 1px 4px #0000006b);
   padding: 0 var(--screen-padding-side);
   padding-top: clamp(
     var(--screen-padding-top),
