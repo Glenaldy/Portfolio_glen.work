@@ -56,7 +56,7 @@ app.get("/work-details/:project", function (req, res) {
     }
   }
   if (found) {
-    console.log("redirecting....");
+    console.log("redirecting to " + projectName);
     let imageDir = work.getData(
       "./public/assets/Works/" + projectName,
       "image"

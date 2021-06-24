@@ -25,9 +25,10 @@ function getData(location, dataName) {
         let en = fileName + "en";
         let jp = fileName + "jp";
         array.push({ fileName, fileExt, en, jp });
-      }
-    } else break;
+      } else break;
+    }
   }
+  openDir.close();
   return array;
 }
 
