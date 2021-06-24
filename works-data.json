@@ -14,7 +14,8 @@
     "image07en": "All pages",
     "image08en": "Website, Landing page",
     "image09en": "Website, Menu page",
-    "image10en": "Printed book",
+    "image10en": "Website, Character page",
+    "image11en": "Printed book",
     "image01jp": "カバーと中身",
     "image02jp": "モナクシアス、人間の定住",
     "image03jp": "ヴラナ、アンダーワルド",
@@ -24,7 +25,8 @@
     "image07jp": "すべてのページ",
     "image08jp": "ウェブ、ランディングページ",
     "image09jp": "ウェブ、メニュー",
-    "image10jp": "印刷本品"
+    "image10jp": "ウェブ、キャラクターページ",
+    "image11jp": "印刷本品"
   },
   "reddit_fes": {
     "genre": "illustrator printing",
