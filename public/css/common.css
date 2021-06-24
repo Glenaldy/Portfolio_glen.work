@@ -709,6 +709,12 @@ h1 {
       width: 50%;
       max-width: 200px; }
 
+#error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
 @media screen and (min-width: 768px) {
   :root {
     --screen-padding-side: 50px; }

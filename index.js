@@ -128,7 +128,7 @@ app.post("/send", (req, res) => {
 });
 //ERROR HANDLING
 app.get("*", function (req, res) {
-  res.status(404).render("error");
+  res.status(404).render("error", { title: "Error | @ glen.work" });
 });
 
 const PORT = process.env.PORT || 5000;
