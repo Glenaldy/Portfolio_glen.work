@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   color: white;
-  font-family: "Source Code Pro"; }
+  font-family: 'Source Code Pro'; }
 
 html {
   overflow-y: scroll;
@@ -31,6 +31,7 @@ html {
   --medium-big-text-size: 24px;
   --big-text-size: 36px;
   --small-text-size: 12px;
+  --small-medium-text-size: 16px;
   --screen-padding-top: 45px;
   --screen-padding-side: 20px;
   --screen-padding-bottom: 30px;
@@ -41,9 +42,9 @@ html {
   --medium-text-weight: 500;
   --light-text-weight: 300;
   --image-cell: clamp(
-    200px,
-    500px,
-    calc(100vw - (var(--screen-padding-side) * 2))
+      200px,
+      500px,
+      calc(100vw - (var(--screen-padding-side) * 2))
   ); }
 
 .material-icons.md-48 {
@@ -82,7 +83,7 @@ header#global-header {
       height: 50px; }
     header#global-header .global-header_home .global-header_title {
       /*display: flex;
-      flex-direction: column;*/
+flex-direction: column;*/
       height: 45px;
       margin-left: 10px; }
       header#global-header .global-header_home .global-header_title #header-title1 {
@@ -205,7 +206,10 @@ footer#global-footer {
       font-weight: 500; }
     footer#global-footer .global-footer_container .global-footer_text {
       font-style: italic;
-      margin-top: 50px; }
+      margin-top: 50px;
+      text-align: center;
+      display: inline-block;
+      max-width: 80%; }
   footer#global-footer .global-footer_footer {
     width: 100%;
     display: flex;
@@ -287,6 +291,43 @@ h1 {
     line-height: 30px;
     font-size: var(--general-text-size);
     font-weight: 500; }
+  #index-home .content #github-link {
+    margin: 20px 0;
+    display: flex;
+    align-items: center; }
+    #index-home .content #github-link > :not(:last-child) {
+      margin-right: 15px; }
+    #index-home .content #github-link span {
+      display: none;
+      font-size: var(--small-medium-text-size);
+      line-height: calc(var(--small-medium-text-size) + 1); }
+  #index-home .content .cfa-button {
+    display: block;
+    height: 55px;
+    width: 130px;
+    font-size: var(--general-text-size);
+    font-weight: var(--semibold-text-weight);
+    position: relative; }
+    #index-home .content .cfa-button #cfa-top {
+      position: absolute;
+      height: 40px;
+      width: 130px;
+      border-radius: 45px;
+      border: 4px solid #400e4c;
+      background-color: #02d3be;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    #index-home .content .cfa-button #cfa-bottom {
+      position: absolute;
+      transform: translate(0, 23px);
+      background-color: #007e73;
+      height: 30px;
+      width: 130px;
+      border-radius: 0px 0px 20px 20px;
+      border: 4px solid #400e4c;
+      z-index: 1; }
 
 /****************
       INDEX SECTION ABOUT
@@ -729,6 +770,8 @@ h1 {
     #index-home .content span {
       display: block;
       width: 75%; }
+    #index-home .content #github-link span {
+      display: block; }
 
   #index-about .content h1 {
     margin-bottom: 50px; }
