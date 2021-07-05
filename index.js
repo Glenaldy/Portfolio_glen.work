@@ -1,5 +1,7 @@
-const express = require('express');
-const exphbs = require('express-handlebars');
+const express = require('express'),
+    exphbs = require('express-handlebars'),
+    bodyParser = require('body-parser'),
+    request = require('request');
 
 //Google Analytics
 
@@ -34,7 +36,7 @@ app.get('/', function (req, res) {
         text: 'Someone is visiting'
     };
 
-    transporter.sendMail(mail);
+    //transporter.sendMail(mail);
 
     res.render('home', {
         title: 'Glenaldy | @ glen.work',
@@ -110,35 +112,79 @@ transporter.verify(function (error, success) {
         console.log('Server is ready to take our messages');
     }
 });
+
 app.post('/send', (req, res) => {
     let form = new multiparty.Form();
     let data = {};
+
+    // form.parse(req, function (err, fields) {
+    //     console.log(fields);
+    //     Object.keys(fields).forEach(function (property) {
+    //         data[property] = fields[property].toString();
+    //     });
+    // });
     form.parse(req, function (err, fields) {
         console.log(fields);
         Object.keys(fields).forEach(function (property) {
             data[property] = fields[property].toString();
         });
-        const mail = {
-            from: data.name,
-            to: process.env.EMAIL,
-            subject: data.subject,
-            text: `${data.name} <${data.email}> \n${data.message}`
-        };
-        transporter.sendMail(mail, (err, data) => {
-            if (err) {
-                console.log(err);
-                res.redirect(500, '*');
-            } else {
-                let confirmation = 'Sent, thank you for reaching out';
+
+        const secretKey = process.env.reCAPTCHA_SECRET_KEY;
+        if (
+            data['g-recaptcha-response'] === undefined ||
+            data['g-recaptcha-response'] === '' ||
+            data['g-recaptcha-response'] === null
+        ) {
+            let confirmation = 'Captcha verification failed, sorry';
+            res.render('contact', {
+                title: 'Contact Me',
+                confirmation: confirmation
+            });
+        }
+
+        const verificationURL =
+            'https://www.google.com/recaptcha/api/siteverify?secret=' +
+            secretKey +
+            '&response=' +
+            data['g-recaptcha-response'];
+
+        request(verificationURL, function (error, response, body) {
+            body = JSON.parse(body);
+            if (body.success !== undefined && !body.success) {
+                let confirmation = 'Captcha verification failed, sorry';
+                res.render('contact', {
+                    title: 'Contact Me',
+                    confirmation: confirmation
+                });
+            } else if (body.score < 0.5) {
+                let confirmation = 'The server thinks you are a bot, sorry';
                 res.render('contact', {
                     title: 'Contact Me',
                     confirmation: confirmation
                 });
             }
+            const mail = {
+                from: data.name,
+                to: process.env.EMAIL,
+                subject: data.subject,
+                text: `${data.name} <${data.email}> \n${data.message}`
+            };
+            transporter.sendMail(mail, (err, data) => {
+                if (err) {
+                    console.log(err);
+                    res.redirect(500, '*');
+                } else {
+                    let confirmation = 'Sent, thank you for reaching out';
+                    res.render('contact', {
+                        title: 'Contact Me',
+                        confirmation: confirmation
+                    });
+                }
+            });
         });
     });
 });
-//ERROR HANDLING
+// ERROR HANDLING
 app.get('*', function (req, res) {
     res.status(404).render('error', { title: 'Error | @ glen.work' });
 });

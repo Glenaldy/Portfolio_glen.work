@@ -29,6 +29,8 @@
                 I would like to know you better
             </p>
             <form action="/send" id="contact-form" method="post" enctype="multipart/form-data">
+                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                <input type="hidden" name="action" value="validate_captcha">
                 <input type="email" name="email" placeholder="Email | Eメール" required>
                 <input type="text" name="name" placeholder="Name | 名前" required>
                 <textarea name="message" rows="5" placeholder="Message |　メッセージ" required></textarea>
@@ -37,4 +39,16 @@
         </div>
     </div>
 </main>
+<script src="https://www.google.com/recaptcha/api.js?render=6LcxzXgbAAAAAEPcf0RB00sCQmQCYdWnOxdQOkKa"></script>
+<script>
+    grecaptcha.ready(function () {
+        // do request for recaptcha token
+        // response is promise with passed token
+        grecaptcha.execute('6LcxzXgbAAAAAEPcf0RB00sCQmQCYdWnOxdQOkKa', { action: 'validate_captcha' })
+            .then(function (token) {
+                // add token value to form
+                document.getElementById('g-recaptcha-response').value = token;
+            });
+    });
+</script>
 {{>footer}}
