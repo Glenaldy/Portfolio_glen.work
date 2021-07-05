@@ -162,25 +162,26 @@ app.post('/send', (req, res) => {
                     title: 'Contact Me',
                     confirmation: confirmation
                 });
+            } else {
+                const mail = {
+                    from: data.name,
+                    to: process.env.EMAIL,
+                    subject: data.subject,
+                    text: `${data.name} <${data.email}> \n${data.message}`
+                };
+                transporter.sendMail(mail, (err, data) => {
+                    if (err) {
+                        console.log(err);
+                        res.redirect(500, '*');
+                    } else {
+                        let confirmation = 'Sent, thank you for reaching out';
+                        res.render('contact', {
+                            title: 'Contact Me',
+                            confirmation: confirmation
+                        });
+                    }
+                });
             }
-            const mail = {
-                from: data.name,
-                to: process.env.EMAIL,
-                subject: data.subject,
-                text: `${data.name} <${data.email}> \n${data.message}`
-            };
-            transporter.sendMail(mail, (err, data) => {
-                if (err) {
-                    console.log(err);
-                    res.redirect(500, '*');
-                } else {
-                    let confirmation = 'Sent, thank you for reaching out';
-                    res.render('contact', {
-                        title: 'Contact Me',
-                        confirmation: confirmation
-                    });
-                }
-            });
         });
     });
 });
