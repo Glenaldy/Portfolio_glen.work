@@ -438,8 +438,8 @@ h1 {
             width: fit-content;
             height: fit-content;
             #cfa-text {
-                display: none;
-                opacity: 0;
+                display: block;
+                opacity: 1;
                 font-size: var(--general-text-size);
                 font-weight: var(--medium-text-weight);
                 margin-right: 10px;
@@ -476,7 +476,7 @@ h1 {
                     /**/
                     position: absolute;
                     transform: translate(0, 12px);
-                    height: 19px;
+                    height: 22px;
                     width: 25px;
                     border: 3px solid #2b1d13;
                     border-radius: 0px 0px 15px 15px;

@@ -34,7 +34,7 @@ function buttonAnimation(object) {
         $(this)
             .find('#cfa-top')
             .stop()
-            .transition({ y: 5 }, 300, 'easeOutCubic');
+            .transition({ y: 4 }, 300, 'easeOutCubic');
     });
     object.on('mouseout', function () {
         $(this)
