@@ -1,6 +1,6 @@
 const express = require('express'),
     exphbs = require('express-handlebars'),
-    bodyParser = require('body-parser'),
+    date = require('date-and-time'),
     request = require('request');
 
 //Google Analytics
@@ -11,7 +11,7 @@ const multiparty = require('multiparty');
 require('dotenv').config();
 
 const work = require('./work');
-
+const now = new Date();
 const app = express();
 
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
@@ -31,12 +31,13 @@ app.get('/', function (req, res) {
     let work_list = require('./works-data.json');
 
     // Send me email if someone is visiting.
+
     const mail = {
         to: process.env.EMAIL,
-        text: 'Someone is visiting'
+        text: 'Someone is visiting\n' + date.format(now, 'YYYY/MM/DD HH:mm:ss')
     };
 
-    //transporter.sendMail(mail);
+    transporter.sendMail(mail);
 
     res.render('home', {
         title: 'Glenaldy | @ glen.work',
@@ -167,7 +168,9 @@ app.post('/send', (req, res) => {
                     from: data.name,
                     to: process.env.EMAIL,
                     subject: data.subject,
-                    text: `${data.name} <${data.email}> \n${data.message}`
+                    text: `${data.name} <${data.email}> \n${
+                        data.message
+                    } \n${date.format(now, 'YYYY/MM/DD HH:mm:ss')}`
                 };
                 transporter.sendMail(mail, (err, data) => {
                     if (err) {
