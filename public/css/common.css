@@ -530,6 +530,7 @@ h1 {
         text-align: left; }
       #about-page .content .about-text .points {
         margin-top: 10px;
+        margin-bottom: 0;
         width: 100%;
         display: flex;
         justify-content: space-around;
@@ -537,7 +538,8 @@ h1 {
         #about-page .content .about-text .points .point-cell {
           width: 250px;
           display: flex;
-          flex-direction: column; }
+          flex-direction: column;
+          margin-bottom: 0; }
           #about-page .content .about-text .points .point-cell .point-icon {
             height: 150px;
             width: 100%; }
