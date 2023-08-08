@@ -262,6 +262,17 @@ main {
   height: fit-content;
   margin: 0 auto; }
 
+/*#new-work{*/
+/*  height: 200px;*/
+/*  */
+/*}*/
+#new-work-image{
+  border: solid white;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 150px;
+}
+
 h1 {
   filter: drop-shadow(2px 2px 3px #0000006b); }
 
