@@ -2,10 +2,6 @@ const express = require('express'),
     exphbs = require('express-handlebars'),
     date = require('date-and-time'),
     request = require('request');
-
-//Google Analytics
-
-//Nodemailer for contacts
 const nodemailer = require('nodemailer');
 const multiparty = require('multiparty');
 require('dotenv').config();
@@ -18,7 +14,6 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public/'));
 
-//Force HTTPS
 if (process.env.NODE_ENV === 'production') {
     app.use((req, res, next) => {
         if (req.header('x-forwarded-proto') !== 'https')
@@ -26,18 +21,8 @@ if (process.env.NODE_ENV === 'production') {
         else next();
     });
 }
-//DEFAULT ROUTE
 app.get('/', function (req, res) {
     let work_list = require('./works-data.json');
-
-    // Send me email if someone is visiting.
-
-    const mail = {
-        to: process.env.EMAIL,
-        text: 'Someone is visiting\n' + date.format(now, 'YYYY/MM/DD HH:mm:ss')
-    };
-
-    transporter.sendMail(mail);
 
     res.render('home', {
         title: 'Glenaldy | @ glen.work',
@@ -45,12 +30,10 @@ app.get('/', function (req, res) {
     });
 });
 
-//ABOUT ROUTE
 app.get('/about', function (req, res) {
     res.render('about', { title: 'About Me' });
 });
 
-//WORKS ROUTE
 app.get('/works', function (req, res) {
     let work_list = require('./works-data.json');
     res.render('works', {
@@ -59,7 +42,6 @@ app.get('/works', function (req, res) {
     });
 });
 
-//ABOUT ROUTE
 app.get('/work-details/:project', function (req, res) {
     let work_list = require('./works-data.json');
     const projectName = req.params.project;
@@ -76,7 +58,7 @@ app.get('/work-details/:project', function (req, res) {
             './public/assets/Works/' + projectName,
             'image'
         );
-        let project_details = 'works/' + projectName; //address for the variable inside handlebar
+        let project_details = 'works/' + projectName;
         let data = work_list[projectName];
         res.render('work-details', {
             title: data.title + ' | Works by Glenaldy',
@@ -97,7 +79,6 @@ app.get('/contact', function (req, res) {
     });
 });
 
-//FORM//
 const transporter = nodemailer.createTransport({
     service:'gmail',
     auth: {
@@ -105,24 +86,11 @@ const transporter = nodemailer.createTransport({
         pass: process.env.PASS
     }
 });
-// transporter.verify(function (error, success) {
-//     if (error) {
-//         console.log(error);
-//     } else {
-//         console.log('Server is ready to take our messages');
-//     }
-// });
 
 app.post('/send', (req, res) => {
     let form = new multiparty.Form();
     let data = {};
 
-    // form.parse(req, function (err, fields) {
-    //     console.log(fields);
-    //     Object.keys(fields).forEach(function (property) {
-    //         data[property] = fields[property].toString();
-    //     });
-    // });
     form.parse(req, function (err, fields) {
         console.log(fields);
         Object.keys(fields).forEach(function (property) {
@@ -187,7 +155,6 @@ app.post('/send', (req, res) => {
         });
     });
 });
-// ERROR HANDLING
 app.get('*', function (req, res) {
     res.status(404).render('error', { title: 'Error | @ glen.work' });
 });
