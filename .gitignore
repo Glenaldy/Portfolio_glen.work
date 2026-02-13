@@ -1,2 +1,3 @@
 # ignore env data for security
 .env
+node_modules/
